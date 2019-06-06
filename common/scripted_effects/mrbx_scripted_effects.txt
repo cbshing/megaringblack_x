@@ -1,0 +1,1433 @@
+#	Example:
+#
+#	example_effect = {
+#		add_energy = -100
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+
+# mrbx_technologies
+give_mrbx_technologies = {
+	give_technology = { tech = "tech_mega_engineering" message = no }
+	give_technology = { tech = "tech_gateway_activation" message = no }
+	give_technology = { tech = "tech_gateway_construction" message = no }
+}
+
+# mrbx_technologies worm
+give_mrbx_worm_technologies = {
+	set_country_flag = worm_awaited
+	give_technology = { tech = "tech_akx_worm_1" message = no }
+	give_technology = { tech = "tech_akx_worm_2" message = no }
+	give_technology = { tech = "tech_akx_worm_3" message = no }
+}
+
+give_mrbx_blackhole_resources = {
+	random_system_planet = {
+		limit = { 
+			is_star = yes 
+			has_planet_flag = mrbx_ringworld_start
+		}
+		orbital_deposit_tile = {
+			add_deposit = d_dark_matter_deposit_1
+		}
+	}
+}
+
+# add deposits
+give_mrbx_system_resources = {
+	random_system_planet = {
+		limit = { has_planet_flag = living_metal_planet_resource }
+		orbital_deposit_tile = {
+			add_deposit = d_living_metal_deposit   
+		}
+	}
+	random_system_planet = {
+		limit = { has_planet_flag = terraforming_planet_resource }
+		orbital_deposit_tile = {
+			add_deposit = d_terraforming_fluid_deposit_1   
+			add_deposit = d_terraforming_gas_deposit_1   
+		}
+	}
+	random_system_planet = {
+		limit = { has_planet_flag = nexus_planet_resources }
+		orbital_deposit_tile = {
+			add_deposit = d_satramene_deposit_1    
+			add_deposit = d_lythuric_deposit_1  
+			add_deposit = d_garanthium_deposit_1   
+			add_deposit = d_neutronium_deposit_1  
+		}
+	}
+	random_system_planet = {
+		limit = { has_planet_flag = sentry_planet_resources }
+		orbital_deposit_tile = {
+			add_deposit = d_orillium_deposit_1      
+			add_deposit = d_teldar_deposit_1   
+			add_deposit = d_yurantic_deposit_1 
+			add_deposit = d_aldar_deposit_1 
+			add_deposit = d_zro_deposit_1  
+		}
+	}
+	random_system_planet = {
+		limit = { has_planet_flag = dyson_planet_resources }
+		orbital_deposit_tile = {
+			add_deposit = d_pitharan_deposit_1    
+			add_deposit = d_engos_deposit_1   
+		}
+	}
+}
+
+mrbx_ruined_debris_effect = {
+	create_ambient_object = {
+		type = "large_debris_object"
+		location = solar_system
+	}
+	create_ambient_object = {
+		type = "large_debris_object"
+		location = solar_system
+	}
+	create_ambient_object = {
+		type = "large_debris_object"
+		location = solar_system
+	}
+	create_ambient_object = {
+		type = "medium_debris_01_object"
+		location = solar_system
+	}
+	create_ambient_object = {
+		type = "medium_debris_02_object"
+		location = solar_system
+	}
+	create_ambient_object = {
+		type = "medium_debris_01_object"
+		location = solar_system
+	}
+	create_ambient_object = {
+		type = "medium_debris_02_object"
+		location = solar_system
+	}
+	create_ambient_object = {
+		type = "small_debris_object"
+		location = solar_system
+	}
+}
+
+remove_mrbx_tileblockers = {
+	every_tile = {
+		limit = { has_blocker = yes }
+		remove_blocker  = yes
+	}
+}
+
+add_mrbx_tileblockers = {
+	random_tile = {
+		limit = { NOT = { has_building = yes has_blocker = yes } }
+		set_blocker  = tb_active_volcano 
+	}
+	random_tile = {
+		limit = { NOT = { has_building = yes has_blocker = yes } }
+		set_blocker  = tb_dangerous_wildlife  
+	}
+	random_tile = {
+		limit = { NOT = { has_building = yes has_blocker = yes } }
+		set_blocker  = tb_dense_jungle  
+	}
+	random_tile = {
+		limit = { NOT = { has_building = yes has_blocker = yes } }
+		set_blocker  = tb_quicksand_basin  
+	}
+	random_tile = {
+		limit = { NOT = { has_building = yes has_blocker = yes } }
+		set_blocker  = tb_noxious_swamp  
+	}
+	random_tile = {
+		limit = { NOT = { has_building = yes has_blocker = yes } }
+		set_blocker  = tb_massive_glacier  
+	}
+	random_tile = {
+		limit = { NOT = { has_building = yes has_blocker = yes } }
+		set_blocker  = tb_toxic_kelp   
+	}
+	random_tile = {
+		limit = { NOT = { has_building = yes has_blocker = yes } }
+		set_blocker  = tb_deep_sinkhole   
+	}
+	random_tile = {
+		limit = { NOT = { has_building = yes has_blocker = yes } }
+		set_blocker  = tb_mountain_range   
+	}
+	random_tile = {
+		limit = { NOT = { has_building = yes has_blocker = yes } }
+		set_blocker  = tb_city_ruins    
+	}
+	random_tile = {
+		limit = { NOT = { has_building = yes has_blocker = yes } }
+		set_blocker  = tb_city_ruins    
+	}
+}
+
+add_mrbx_tileblockers_habitat = {
+	random_tile = {
+		limit = { NOT = { has_building = building_hab_capital has_blocker = yes } }
+		remove_building = yes
+		kill_pop = yes
+		set_blocker  = tb_active_volcano
+	}
+	random_tile = {
+		limit = { NOT = { has_building = building_hab_capital has_blocker = yes } }
+		remove_building = yes
+		kill_pop = yes
+		set_blocker  = tb_dangerous_wildlife  
+	}
+	random_tile = {
+		limit = { NOT = { has_building = building_hab_capital has_blocker = yes } }
+		remove_building = yes
+		kill_pop = yes
+		set_blocker  = tb_dense_jungle  
+	}
+	random_tile = {
+		limit = { NOT = { has_building = building_hab_capital has_blocker = yes } }
+		remove_building = yes
+		kill_pop = yes
+		set_blocker  = tb_quicksand_basin  
+	}
+	random_tile = {
+		limit = { NOT = { has_building = building_hab_capital has_blocker = yes } }
+		remove_building = yes
+		kill_pop = yes
+		set_blocker  = tb_noxious_swamp  
+	}
+	random_tile = {
+		limit = { NOT = { has_building = building_hab_capital has_blocker = yes } }
+		remove_building = yes
+		kill_pop = yes
+		set_blocker  = tb_massive_glacier  
+	}
+	random_tile = {
+		limit = { NOT = { has_building = building_hab_capital has_blocker = yes } }
+		remove_building = yes
+		kill_pop = yes
+		set_blocker  = tb_toxic_kelp   
+	}
+	random_tile = {
+		limit = { NOT = { has_building = building_hab_capital has_blocker = yes } }
+		remove_building = yes
+		kill_pop = yes
+		set_blocker  = tb_deep_sinkhole   
+	}
+	random_tile = {
+		limit = { NOT = { has_building = building_hab_capital has_blocker = yes } }
+		remove_building = yes
+		kill_pop = yes
+		set_blocker  = tb_mountain_range   
+	}
+	random_tile = {
+		limit = { NOT = { has_building = building_hab_capital has_blocker = yes } }
+		remove_building = yes
+		kill_pop = yes
+		set_blocker  = tb_ancient_ruins    
+	}
+}
+
+mrbx_wormed_planet_effect = {
+	every_system_planet = {
+		limit = { has_planet_flag = mrbx_worm_world }
+		#change_pc = pc_nuked
+		#clear_deposits = yes
+		
+		random_tile = {
+			limit = { 
+				has_blocker = no 
+				NOT = { has_building = building_capital_2 } 
+				NOT = { has_building = building_capital_1 } 
+				NOT = { has_building = building_machine_capital_2 } 
+				NOT = { has_building = building_machine_capital_1 } 
+			}
+			set_building = "building_akx_worm_3"
+		}
+		random_tile = {
+			limit = { 
+				has_blocker = no 
+				NOT = { has_building = building_capital_2 } 
+				NOT = { has_building = building_capital_1 } 
+				NOT = { has_building = building_machine_capital_2 } 
+				NOT = { has_building = building_machine_capital_1 } 
+				NOT = { has_building = building_akx_worm_3 }
+			}
+			set_building = "building_akx_worm_2"
+		}
+		random_tile = {
+			limit = { 
+				has_blocker = no 
+				NOT = { has_building = building_capital_2 } 
+				NOT = { has_building = building_capital_1 } 
+				NOT = { has_building = building_machine_capital_2 } 
+				NOT = { has_building = building_machine_capital_1 } 
+				NOT = { has_building = building_akx_worm_3 }
+				NOT = { has_building = building_akx_worm_2 }
+			}
+			set_building = "building_akx_worm_1"
+		}
+		while = {
+			count = 1
+			random_tile = {
+				limit = { 
+					has_blocker = no 
+					NOT = { has_building = building_capital_2 } 
+					NOT = { has_building = building_capital_1 } 
+					NOT = { has_building = building_machine_capital_2 } 
+					NOT = { has_building = building_machine_capital_1 } 
+					NOT = { has_building = building_akx_worm_3 }
+					NOT = { has_building = building_akx_worm_2 }
+					NOT = { has_building = building_akx_worm_1 }
+					NOT = { has_building = building_worm_mine }
+				}
+				set_building = "building_worm_mine"
+			}
+		}
+		while = {
+			count = 1
+			random_tile = {
+				limit = { 
+					has_blocker = no 
+					NOT = { has_building = building_capital_2 } 
+					NOT = { has_building = building_capital_1 } 
+					NOT = { has_building = building_machine_capital_2 } 
+					NOT = { has_building = building_machine_capital_1 } 
+					NOT = { has_building = building_akx_worm_3 }
+					NOT = { has_building = building_akx_worm_2 }
+					NOT = { has_building = building_akx_worm_1 }
+					NOT = { has_building = building_worm_mine }
+					NOT = { has_building = building_worm_farm }
+				}
+				set_building = "building_worm_farm"
+			}
+		}
+	}
+}
+
+create_mrbx_guardians = {
+	random_system_planet = {
+		limit = { has_planet_flag = mrbx_ringworld_start }
+		save_event_target_as = mrbx_worm_star
+	}
+	random_system_planet = {
+		limit = { has_planet_flag = mrbx_dyson_star }
+		save_event_target_as = mrbx_guardian_dragon_planet
+	}
+	random_system_planet = {
+		limit = { has_planet_flag = mrbx_gateway_star }
+		save_event_target_as = mrbx_guardian_stellarite_planet
+	}
+	random_system_planet = {
+		limit = { has_planet_flag = mrbx_nexus_star }
+		save_event_target_as = mrbx_guardian_auomated_dreadnought_planet
+	}
+	random_system_planet = {
+		limit = { has_planet_flag = mrbx_sentry_star }
+		save_event_target_as = mrbx_guardian_technosphere_planet
+	}
+	create_country = {
+		name = "Guardians of the Ring"
+		type = mrbx_guardian
+		auto_delete = no
+		flag = {
+			icon= {
+				category = "special"
+				file = "extradimensional_02.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "circle.dds"
+			}
+			colors={
+				"black"
+				"blue"
+				"null"
+				"null"
+			}
+		}
+		effect = {
+			if = {
+				limit = { NOT = { has_modifier = worm_manifestation }	}
+				add_modifier = { modifier = worm_manifestation days = -1	}
+			}
+			if = {
+				limit = { NOT = { has_modifier = dreadnought_power }	}
+				add_modifier = { modifier = dreadnought_power days = -1	}
+			}	
+			establish_communications_no_message = root.owner
+			set_country_flag = mrbx_guardians_country
+			save_global_event_target_as = mrbx_guardians_country
+			create_fleet = {
+				name = "TIME IS SIGHT GRAVITY IS DESIRE"
+				settings = { spawn_debris = no }
+				effect = {
+					set_owner = event_target:mrbx_guardians_country
+					create_ship_design = {
+						design = "NAME_Dimensional_Horror"
+					}
+					create_ship = {
+						design = last_created_design
+						name = "NAME_Worm-in-Waiting"
+					}
+					set_location = {
+						target = event_target:mrbx_worm_star
+						distance = 30
+						angle = 30
+					}
+				}
+			}
+			create_fleet = {
+				name = "NAME_Ether_Drake"
+				settings = {
+					spawn_debris = no
+					#is_boss = yes
+				}
+				effect = {
+					set_owner = event_target:mrbx_guardians_country
+					create_ship = {
+						name = "NAME_Avice"
+						design = "NAME_Grand_Dragon"
+					}
+					set_fleet_flag = mrbx_dragon_fleet
+					set_location = event_target:mrbx_guardian_dragon_planet
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 500
+					queue_actions = {
+						repeat = {
+							find_closest_planet = {
+								trigger = {
+									id = mrbx_dragon.home.1
+									has_planet_flag = mrbx_gateway_star
+								}
+								found_planet = {
+									move_to = this
+									orbit_planet = this
+									wait = {
+										duration = 30
+										#random = 20
+									}
+								}
+							}
+							find_closest_planet = {
+								trigger = {
+									id = mrbx_dragon.home.2
+									has_planet_flag = mrbx_nexus_star
+								}
+								found_planet = {
+									move_to = this
+									orbit_planet = this
+									wait = {
+										duration = 30
+										#random = 20
+									}
+								}
+							}
+							find_closest_planet = {
+								trigger = {
+									id = mrbx_dragon.home.3
+									has_planet_flag = mrbx_sentry_star
+								}
+								found_planet = {
+									move_to = this
+									orbit_planet = this
+									wait = {
+										duration = 30
+										#random = 20
+									}
+								}
+							}
+							find_closest_planet = {
+								trigger = {
+									id = mrbx_dragon.home.4
+									is_same_value = event_target:mrbx_guardian_dragon_planet
+								}
+								found_planet = {
+									move_to = this
+									orbit_planet = this
+									wait = {
+										duration = 30
+										#random = 20
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			create_fleet = {
+				name = "NAME_Automated_Dreadnought"
+				settings = {
+					spawn_debris = no
+					#is_boss = yes
+				}
+				effect = {
+					set_owner = event_target:mrbx_guardians_country
+					save_global_event_target_as = mrbx_automated_dreadnought
+					create_ship = {
+						name = "NAME_JuukTidir"
+						design = "NAME_Relic"
+						graphical_culture = "npf_01_dirty"
+					}
+					set_location = {
+						target = event_target:mrbx_guardian_auomated_dreadnought_planet
+						distance = 0
+						angle = random
+					}
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = return_point
+					set_aggro_range = 350
+					queue_actions = {
+						repeat = {
+							find_closest_planet = {
+								trigger = {
+									id = mrbx_dreadnought.patrol.1
+									has_planet_flag = mrbx_sentry_star
+								}
+								found_planet = {
+									move_to = this
+									orbit_planet = this
+									wait = {
+										duration = 30
+										#random = 20
+									}
+								}
+							}
+							find_closest_planet = {
+								trigger = {
+									id = mrbx_dreadnought.patrol.2
+									has_planet_flag = mrbx_dyson_star
+								}
+								found_planet = {
+									move_to = this
+									orbit_planet = this
+									wait = {
+										duration = 30
+										#random = 20
+									}
+								}
+							}
+							find_closest_planet = {
+								trigger = {
+									id = mrbx_dreadnought.patrol.3
+									has_planet_flag = mrbx_gateway_star
+								}
+								found_planet = {
+									move_to = this
+									orbit_planet = this
+									wait = {
+										duration = 30
+										#random = 20
+									}
+								}
+							}
+							find_closest_planet = {
+								trigger = {
+									id = mrbx_dreadnought.patrol.4
+									is_same_value = event_target:mrbx_guardian_dragon_planet
+								}
+								found_planet = {
+									move_to = this
+									orbit_planet = this
+									wait = {
+										duration = 30
+										#random = 20
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			create_fleet = {
+				name = "NAME_Stellarite_Devourer"
+				settings = {
+					spawn_debris = no 
+					#is_boss = yes
+				}
+				effect = {
+					set_owner = event_target:mrbx_guardians_country
+					create_ship = {
+						name = "NAME_Stellar_Devourer"
+						design = "NAME_Stellarite"
+						effect = {
+							set_ship_flag = stellarite_ship
+							save_global_event_target_as = mrbx_stellarite
+						}
+					}
+					set_location = {
+						target = event_target:mrbx_guardian_stellarite_planet
+						distance = 0
+						angle = random
+					}
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 100
+					queue_actions = {
+						repeat = {
+							find_closest_planet = {
+								trigger = {
+									id = mrbx_stellarite.patrol.1
+									has_planet_flag = mrbx_nexus_star
+								}
+								found_planet = {
+									move_to = this
+									orbit_planet = this
+									wait = {
+										duration = 30
+										#random = 20
+									}
+								}
+							}
+							find_closest_planet = {
+								trigger = {
+									id = mrbx_stellarite.patrol.2
+									has_planet_flag = mrbx_sentry_star
+								}
+								found_planet = {
+									move_to = this
+									orbit_planet = this
+									wait = {
+										duration = 30
+										#random = 20
+									}
+								}
+							}
+							find_closest_planet = {
+								trigger = {
+									id = mrbx_stellarite.patrol.3
+									has_planet_flag = mrbx_dyson_star
+								}
+								found_planet = {
+									move_to = this
+									orbit_planet = this
+									wait = {
+										duration = 30
+										#random = 20
+									}
+								}
+							}
+							find_closest_planet = {
+								trigger = {
+									id = mrbx_stellarite.patrol.4
+									is_same_value = event_target:mrbx_guardian_stellarite_planet
+								}
+								found_planet = {
+									move_to = this
+									orbit_planet = this
+									wait = {
+										duration = 30
+										#random = 20
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# create Infinity Machine
+create_mrbx_technosphere = {
+	random_system_planet = {
+		limit = {
+			is_star = yes
+			has_planet_flag = mrbx_ringworld_start
+		}
+		#orbital_deposit_tile = { clear_deposits = yes }
+		create_country = {
+			name = "NAME_Infinity_Machine"
+			type = guardian_sphere
+			flag = {
+				icon = {
+					category = "zoological"
+					file = "flag_zoological_5.dds"
+				}
+				background = {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"red"
+					"red"
+					"null"
+					"null"
+				}
+			}
+		}
+		last_created_country = {
+			guardian_difficulty = yes
+			save_global_event_target_as = guardian_technosphere_country
+			if = {
+				limit = {
+					NOT = {
+						has_modifier = technosphere_power
+					}
+				}
+				add_modifier = {
+					modifier = technosphere_power
+					days = -1
+				}
+			}			
+			set_graphical_culture = techno
+			create_fleet = {
+				name = "NAME_The_Infinity_Machine"
+				settings = {
+					spawn_debris = no
+					is_boss = yes
+				}
+				effect = {
+					set_owner = event_target:guardian_technosphere_country
+					create_ship = {
+						name = "NAME_I_O"
+						design = "NAME_Infinity_Machine"
+					}
+					set_fleet_flag = technosphere_fleet
+					#set_fleet_flag = mrbx_technosphere_fleet
+					set_location = {
+						target = prevprev
+						distance = 30
+						angle = 220
+					}
+					set_fleet_stance = passive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 100
+					save_global_event_target_as = technosphere_ship
+				}
+			}
+		}
+	}
+}
+
+setup_mrbx_habitat = {
+	random_tile = {
+		limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+		set_building = "building_hab_capital"
+	}
+	
+	# Add the lab
+	every_tile = {
+		limit = { has_blocker = no has_building = no }
+		set_building = "building_hab_laboratory_module"	
+	}
+}
+
+setup_mrbx_ringworld = {
+	# Find capitol and buildings, and then remove them
+	# this is needed because planet's deposits were re-rolled after
+	every_tile = {
+		limit = { has_building = yes }
+		remove_building = yes
+	}
+	# Set up a new capitol and nearby buildings
+	random_tile = {
+		limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+		set_building = "building_capital_1"
+		set_deposit = d_energy_deposit	
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_agri_processing_complex"
+			set_deposit = d_rich_farmland_deposit											
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_agri_processing_complex"
+			set_deposit = d_rich_farmland_deposit												
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_dark_matter_power_plant"
+			set_deposit = d_rich_energy_deposit
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_ancient_factory"
+			set_deposit = d_rich_mineral_deposit
+		}
+	}
+	
+	# Add the lab
+	# has pop = yes to make sure they use the tiles that were first generated for this task
+	random_tile = {
+		limit = { has_blocker = no has_building = no}
+		set_building = "building_basic_science_lab_1"
+		random_list = {
+			33 = {
+				set_deposit = d_engineering_deposit										
+			}
+			33 = { 
+				set_deposit = d_society_deposit											
+			}
+			33 = { 
+				set_deposit = d_physics_deposit											
+			}					
+		}	
+	}
+	# Add mine and power plant
+	# has pop = yes to make sure they use the tiles that were first generated for this task
+	random_tile = {
+		limit = { has_blocker = no has_building = no }
+		set_building = "building_mining_network_1"
+		set_deposit = d_mineral_deposit
+	}
+	random_tile = {
+		limit = { has_blocker = no has_building = no  }
+		set_building = "building_hydroponics_farm_1"
+		set_deposit = d_rich_farmland_deposit
+	}
+	random_tile = {
+		limit = { has_blocker = no has_building = no }
+		set_building = "building_mining_network_1"
+		set_deposit = d_mineral_deposit
+	}
+	random_tile = {
+		limit = { has_blocker = no has_building = no  }
+		set_building = "building_hydroponics_farm_1"
+		set_deposit = d_rich_farmland_deposit
+	}
+	random_tile = {
+		limit = { has_blocker = no has_building = no }
+		set_building = "building_mining_network_1"
+		set_deposit = d_mineral_deposit
+	}
+	random_tile = {
+		limit = { has_blocker = no has_building = no  }
+		set_building = "building_hydroponics_farm_1"
+		set_deposit = d_rich_farmland_deposit
+	}
+	random_tile = {
+		limit = { has_blocker = no has_building = no }
+		set_building = "building_mining_network_1"
+		set_deposit = d_mineral_deposit
+	}
+	random_tile = {
+		limit = { has_blocker = no has_building = no  }
+		set_building = "building_hydroponics_farm_1"
+		set_deposit = d_rich_farmland_deposit
+	}
+}
+
+setup_mrbx_machine_ringworld = {
+	random_tile = {
+		limit = {
+			has_building = no
+		}
+		set_building = "building_machine_capital_2"
+		set_deposit = d_energy_deposit	
+		create_pop = {
+			species = owner_main_species 
+			ethos = random
+		}
+	}
+	
+	# change farms to power plant
+	every_tile = {
+		limit = { has_building = "building_agri_processing_complex" }
+		set_building = "building_dark_matter_power_plant"	
+	}
+	every_tile = {
+		limit = { has_building = "building_hydroponics_farm_1" }
+		set_building = "building_power_plant_1"	
+	}
+}
+
+
+setup_mrbx_ringworld_fallen_capital = {
+	# Find capitol and buildings, and then remove them
+	# this is needed because planet's deposits were re-rolled after
+	every_tile = {
+		limit = { has_building = yes }
+		remove_building = yes
+	}
+	# Set up a new capitol and nearby buildings
+	random_tile = {
+		limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+		set_building = "building_capital_2"
+		set_deposit = d_energy_deposit	
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_agri_processing_complex"
+			set_deposit = d_rich_farmland_deposit											
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_agri_processing_complex"
+			set_deposit = d_rich_farmland_deposit												
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_dark_matter_power_plant"
+			set_deposit = d_rich_energy_deposit
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_ancient_factory"
+			set_deposit = d_rich_mineral_deposit
+		}
+	}
+	while = {
+		count = 4
+		random_tile = {
+			limit = { has_building = no has_blocker = no }
+			set_building = "building_dark_matter_power_plant"
+			set_deposit = d_energy_deposit	
+		}				
+	}
+	while = {
+		count = 3
+		random_tile = {
+			limit = { has_building = no has_blocker = no }
+			set_building = "building_ancient_factory"
+			set_deposit = d_mineral_deposit				
+		}				
+	}	
+	while = {
+		count = 3
+		random_tile = {
+			limit = { has_building = no has_blocker = no }
+			set_building = "building_agri_processing_complex"
+			set_deposit = d_farmland_deposit				
+		}				
+	}
+	while = {
+		count = 4
+		random_tile = {
+			limit = { has_building = no has_blocker = no }
+			set_building = "building_fortress"
+		}
+	}
+	random_tile = {
+		limit = { has_building = no has_blocker = no }
+		set_building = "building_ancient_archives"
+		set_deposit = d_engineering_deposit	
+	}
+	random_tile = {
+		limit = { has_building = no has_blocker = no }
+		set_building = "building_ancient_archives"
+		set_deposit = d_society_deposit	
+	}
+	random_tile = {
+		limit = { has_building = no has_blocker = no }
+		set_building = "building_ancient_archives"
+		set_deposit = d_physics_deposit	
+	}
+	random_tile = {
+		limit = { has_building = no has_blocker = no }
+		set_building = "building_ancient_archives"
+		set_deposit = d_engineering_deposit	
+	}
+	random_tile = {
+		limit = { has_building = no has_blocker = no }
+		set_building = "building_ancient_archives"
+		set_deposit = d_society_deposit	
+	}
+	random_tile = {
+		limit = { has_building = no has_blocker = no }
+		set_building = "building_ancient_archives"
+		set_deposit = d_physics_deposit	
+	}
+}
+
+setup_mrbx_ringworld_fallen_mineral = {
+	# Find capitol and buildings, and then remove them
+	# this is needed because planet's deposits were re-rolled after
+	every_tile = {
+		limit = { has_building = yes }
+		remove_building = yes
+	}
+	# Set up a new capitol and nearby buildings
+	random_tile = {
+		limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+		set_building = "building_capital_2"
+		set_deposit = d_energy_deposit	
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_ancient_factory"
+			set_deposit = d_rich_mineral_deposit
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_ancient_factory"
+			set_deposit = d_rich_mineral_deposit
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_ancient_factory"
+			set_deposit = d_rich_mineral_deposit
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_ancient_factory"
+			set_deposit = d_rich_mineral_deposit
+		}
+	}
+	while = {
+		count = 4
+		random_tile = {
+			limit = { has_building = no has_blocker = no }
+			set_building = "building_fortress"
+		}
+	}
+	every_tile = {
+		limit = { has_blocker = no has_building = no }
+		set_building = "building_ancient_factory"
+		set_deposit = d_rich_mineral_deposit
+	}
+}
+
+setup_mrbx_ringworld_fallen_energy = {
+	# Find capitol and buildings, and then remove them
+	# this is needed because planet's deposits were re-rolled after
+	every_tile = {
+		limit = { has_building = yes }
+		remove_building = yes
+	}
+	# Set up a new capitol and nearby buildings
+	random_tile = {
+		limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+		set_building = "building_capital_2"
+		set_deposit = d_energy_deposit	
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_dark_matter_power_plant"
+			set_deposit = d_rich_energy_deposit
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_dark_matter_power_plant"
+			set_deposit = d_rich_energy_deposit
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_dark_matter_power_plant"
+			set_deposit = d_rich_energy_deposit
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_dark_matter_power_plant"
+			set_deposit = d_rich_energy_deposit
+		}
+	}
+	while = {
+		count = 4
+		random_tile = {
+			limit = { has_building = no has_blocker = no }
+			set_building = "building_fortress"
+		}
+	}
+	every_tile = {
+		limit = { has_blocker = no has_building = no }
+		set_building = "building_dark_matter_power_plant"
+		set_deposit = d_rich_energy_deposit
+	}
+}
+
+setup_mrbx_ringworld_fallen_farm = {
+	# Find capitol and buildings, and then remove them
+	# this is needed because planet's deposits were re-rolled after
+	every_tile = {
+		limit = { has_building = yes }
+		remove_building = yes
+	}
+	# Set up a new capitol and nearby buildings
+	random_tile = {
+		limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+		set_building = "building_capital_2"
+		set_deposit = d_energy_deposit	
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_agri_processing_complex"
+			set_deposit = d_rich_farmland_deposit											
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_agri_processing_complex"
+			set_deposit = d_rich_farmland_deposit											
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_agri_processing_complex"
+			set_deposit = d_rich_farmland_deposit											
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_agri_processing_complex"
+			set_deposit = d_rich_farmland_deposit											
+		}
+	}
+	while = {
+		count = 4
+		random_tile = {
+			limit = { has_building = no has_blocker = no }
+			set_building = "building_fortress"
+		}
+	}
+	every_tile = {
+		limit = { has_blocker = no has_building = no }
+		set_building = "building_agri_processing_complex"
+		set_deposit = d_rich_farmland_deposit
+	}
+}
+
+setup_mrbx_ringworld_fallen_bastion = {
+	# Find capitol and buildings, and then remove them
+	# this is needed because planet's deposits were re-rolled after
+	every_tile = {
+		limit = { has_building = yes }
+		remove_building = yes
+	}
+	# Set up a new capitol and nearby buildings
+	random_tile = {
+		limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+		set_building = "building_capital_2"
+		set_deposit = d_energy_deposit	
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_military_academy"
+			set_deposit = d_engineering_deposit												
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_hospital"
+			set_deposit = d_society_deposit												
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_clone_vats"
+			set_deposit = d_society_deposit												
+		}
+		random_neighboring_tile = {
+			limit = { has_blocker = no has_building = no }
+			set_building = "building_planetary_shield_generator"
+			set_deposit = d_energy_deposit												
+		}
+	}
+	random_tile = {
+		limit = { has_building = no has_blocker = no }
+		set_building = "building_slave_processing"
+		set_deposit = d_mineral_deposit	
+	}
+	while = {
+		count = 8
+		random_tile = {
+			limit = { has_building = no has_blocker = no }
+			set_building = "building_fortress"
+		}
+	}
+	every_tile = {
+		limit = { has_blocker = no has_building = no }
+		set_building = "building_ancient_factory"
+		set_deposit = d_rich_mineral_deposit
+	}
+}
+
+setup_mrbx_ringworld_fallen_science = {
+	# Find capitol and buildings, and then remove them
+	# this is needed because planet's deposits were re-rolled after
+	every_tile = {
+		limit = { has_building = yes }
+		remove_building = yes
+	}
+	# Set up a new capitol and nearby buildings
+	random_tile = {
+		limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+		set_building = "building_capital_2"
+		set_deposit = d_energy_deposit	
+	}
+	while = {
+		count = 8
+		random_tile = {
+			limit = { has_building = no has_blocker = no }
+			set_building = "building_ancient_archives"
+			set_deposit = d_physics_deposit						
+		}				
+	}
+	while = {
+		count = 8
+		random_tile = {
+			limit = { has_building = no has_blocker = no }
+			set_building = "building_ancient_archives"
+			set_deposit = d_society_deposit						
+		}				
+	}
+	while = {
+		count = 8
+		random_tile = {
+			limit = { has_building = no has_blocker = no }
+			set_building = "building_ancient_archives"
+			set_deposit = d_engineering_deposit				
+		}				
+	}
+}
+
+setup_mrbx_ringworld_fallen_zoo = {
+	# Find capitol and buildings, and then remove them
+	# this is needed because planet's deposits were re-rolled after
+	random_tile = {
+		limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
+		set_building = "building_capital_2"
+		set_deposit = d_energy_deposit			
+	}
+	while = {
+		count = 12
+		create_species = {
+			name = random
+			class = random_non_machine
+			portrait = random
+			traits = random
+		}	
+		random_tile = {
+			limit = { has_building = no has_pop = no has_blocker = no }
+			create_pop = { 
+				species = last_created_species
+			}					
+			set_building = "building_fe_xeno_zoo"
+		}				
+	}
+	while = {
+		count = 4
+		random_tile = {
+			limit = { has_building = no has_blocker = no }
+			set_building = "building_fortress"
+		}
+	}
+	while = {
+		count = 8
+		random_tile = {
+			limit = { has_building = no has_blocker = no }
+			set_building = "building_agri_processing_complex"
+			set_deposit = d_farmland_deposit				
+		}				
+	}
+}
+
+spawn_artist_enclave = {
+	random_system_planet = {
+		limit = { has_planet_flag = mrbx_guardians_enclave_planet }
+		save_event_target_as = mrbx_guardians_enclave_home
+	}
+	create_species = {
+		name = random
+		class = random_non_machine
+		portrait = random
+		traits = random
+		homeworld = event_target:mrbx_guardians_enclave_home
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = event_target:artist_enclave_country
+			}
+		}
+		create_country = {
+			name = "NAME_Artisan_Troupe"
+			type = enclave
+			authority = "auth_democratic"
+			civics = {
+				civic = civic_artist_collective
+			}
+			species = last_created
+			flag = {
+				icon = {
+					category = "enclaves"
+					file = "enclaves_flag_artist.dds"
+				}
+				background = {
+					category = "backgrounds"
+					file = "vertical.dds"
+				}
+				colors = {
+					"dark_purple"
+					"purple"
+					"null"
+					"null"
+				}
+			}
+			ethos = {
+				ethic = ethic_fanatic_xenophile
+				ethic = ethic_spiritualist
+			}
+			ignore_initial_colony_error = yes
+			effect = { establish_communications_no_message = root.owner }
+		}
+		last_created_country = {
+			save_global_event_target_as = artist_enclave_country
+			set_country_flag = artist_enclave_country
+			set_graphical_culture = mammalian_01
+			create_fleet = {
+				name = "NAME_Ars_Artem"
+				settings = { spawn_debris = no }
+				effect = {
+					set_owner = prev
+					create_ship = {
+						name = random
+						design = "NAME_Artist_Enclave_Station"
+						graphical_culture = prev
+					}
+					set_location = {
+						target = event_target:mrbx_guardians_enclave_home
+						distance = 0
+					}
+					save_event_target_as = CustomCapital
+					prev = {
+						set_custom_capital_location = event_target:CustomCapital
+					}
+				}
+			}
+			create_leader = {
+				type = ruler
+				species = prev
+				name = random
+				skill = 5
+			}
+			set_leader = last_created_leader
+		}
+		else = {
+			event_target:artist_enclave_country = {
+				create_fleet = {
+					name = "NAME_Ars_Artem"
+					settings = { spawn_debris = no }
+					effect = {
+						set_owner = prev
+						create_ship = {
+							name = random
+							design = "NAME_Artist_Enclave_Station"
+							graphical_culture = prev
+							#effect = {
+							#	save_event_target_as = station_location
+							#}
+						}
+						set_location = {
+							target = event_target:mrbx_guardians_enclave_home
+							distance = 0
+						}
+						set_fleet_flag = artist_enclave_station
+					}
+				}
+				create_leader = {
+					type = ruler
+					species = prev
+					name = random
+					skill = 5
+				}
+				set_leader = last_created_leader
+			}
+		}
+	}
+}
+
+spawn_science_enclave = {
+	random_system_planet = {
+		limit = { has_planet_flag = mrbx_guardians_enclave_planet }
+		save_event_target_as = mrbx_guardians_enclave_home
+	}
+	if = {
+		limit = {
+			NOT = { exists = event_target:curator_enclave_country }
+		}
+		create_species = {
+			name = random
+			class = random_non_machine
+			portrait = random
+			traits = random
+			#homeworld = this
+		}
+		create_country = {
+			name = "NAME_Curator_Order"
+			type = enclave
+			authority = "auth_oligarchic"
+			civics = {
+				civic = civic_ancient_preservers
+			}
+			species = last_created
+			flag = {
+				icon = {
+					category = "enclaves"
+					file = "enclaves_flag_curator.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "vertical.dds"
+				}
+				colors={
+					"blue"
+					"dark_blue"
+					"null"
+					"null"
+				}
+			}
+			ethos = {
+				ethic = ethic_fanatic_materialist
+				ethic = ethic_pacifist
+			}
+			ignore_initial_colony_error = yes
+			effect = { establish_communications_no_message = PREVPREV }
+		}
+		last_created_country = {
+			set_country_flag = curator_enclave_country
+			set_graphical_culture = mammalian_01
+			save_global_event_target_as = curator_enclave_country
+			create_fleet = {
+				name = "NAME_Curator_Omega_Enclave"
+				settings = { spawn_debris = no }
+				effect = {
+					set_owner = prev
+					create_ship = {
+						name = random
+						design = "NAME_Curator_Enclave_Station"
+						graphical_culture = prev
+					}
+					set_location = {
+						target = event_target:mrbx_guardians_enclave_home
+						angle = random
+						distance = 0
+					}
+					save_event_target_as = CustomCapital
+					prev = {
+						set_custom_capital_location = event_target:CustomCapital
+					}
+				}
+			}
+			create_leader = {
+				type = ruler
+				species = prev
+				name = random
+				skill = 5
+			}
+			set_leader = last_created_leader
+		}
+		else = {
+			event_target:curator_enclave_country = {
+				create_fleet = {
+					name = "NAME_Curator_Omega_Enclave"
+					settings = { spawn_debris = no }
+					effect = {
+						set_owner = prev
+						create_ship = {
+							name = random
+							design = "NAME_Curator_Enclave_Station"
+							graphical_culture = prev
+						}
+						set_location = {
+							target = event_target:mrbx_guardians_enclave_home
+							distance = 0
+						}
+						save_event_target_as = CustomCapital
+						prev = {
+							set_custom_capital_location = event_target:CustomCapital
+						}	
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,1247 @@
+namespace = megaringblack_x_game_start
+# file modifies start planets to be a Fallen Ancients: The Preserve start
+# by cbshing
+
+# Triggers when the game starts
+# make sure there's only 1 infinity sphere
+event = {
+	id = megaringblack_x_game_start.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		random_system = {
+			limit = { 
+				NOT = { has_star_flag = empire_home_system }
+				has_star_flag = guardians_technosphere_system
+			}
+			every_fleet_in_system = {
+				delete_fleet = this
+			}
+			remove_star_flag = guardians_technosphere_system
+			remove_star_flag = guardian 
+			remove_star_flag = hostile_system
+		}
+	
+	}
+}
+
+# Triggers when the game starts
+# Adds Custom Start Screen & Dark Matter to Star
+country_event = {
+	id = megaringblack_x_game_start.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				any_owned_planet = {
+					OR = {
+						has_planet_flag = mrbx_u_cap
+						has_planet_flag = mrbx_x_cap
+						has_planet_flag = mrbx_c_cap
+						has_planet_flag = mrbx_r_cap
+					}
+				}
+			}
+			if = { limit = { any_owned_planet = { has_planet_flag = mrbx_u_cap } } set_country_flag = mrbx_u }
+			if = { limit = { any_owned_planet = { has_planet_flag = mrbx_x_cap } } set_country_flag = mrbx_x }
+			if = { limit = { any_owned_planet = { has_planet_flag = mrbx_c_cap } } set_country_flag = mrbx_c }
+			if = { limit = { any_owned_planet = { has_planet_flag = mrbx_r_cap } } set_country_flag = mrbx_r }
+			set_country_flag = mrbx_country
+			set_country_flag = custom_start_screen	
+			owner.capital_scope.solar_system = {
+				give_mrbx_blackhole_resources = yes
+			}		
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = mrbx_u
+						has_country_flag = mrbx_x
+						has_country_flag = mrbx_c
+					}
+				}
+				give_mrbx_technologies = yes
+				
+				if = {
+					limit = {
+						NOT = { host_has_dlc = "Apocalypse" }
+					}
+					give_technology = { tech = "tech_ascension_theory" message = no }
+					else = {
+						give_technology = { tech = "tech_ascension_theory_apoc" message = no }
+					}
+				}
+			}
+			
+			owner.capital_scope.solar_system = {
+				give_mrbx_system_resources = yes
+			}
+		}
+	}
+}
+
+# Triggers when the game starts
+# Setups Ringworlds & Habitats
+country_event = {
+	id = megaringblack_x_game_start.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		#if {
+		#	limit = {
+		#		has_country_flag = mrbx_x
+		#	}
+		#	owner.capital_scope.solar_system = {
+		#		random_system_planet = { limit = { has_planet_flag = mrbx_nexus_star } save_event_target_as = nexus_ring_create }
+		#		random_system_planet = { limit = { has_planet_flag = mrbx_sentry_star } save_event_target_as = sentry_ring_create }
+		#		random_system_planet = { limit = { has_planet_flag = mrbx_dyson_star } save_event_target_as = dyson__ring_create }
+		#		random_system_planet = { limit = { has_planet_flag = mrbx_gateway_star } save_event_target_as = gateway_ring_create }
+		#		spawn_megastructure = { 
+		#			type = mrbx_ring_world_2_intermediate 
+		#			location = event_target:nexus_ring_create
+		#			owner = FROMFROM
+		#		}	
+		#		spawn_megastructure = { 
+		#			type = mrbx_ring_world_2_intermediate 
+		#			location = event_target:sentry_ring_create
+		#			owner = FROMFROM
+		#		}		
+		#		spawn_megastructure = { 
+		#			type = mrbx_ring_world_2_intermediate 
+		#			location = event_target:dyson__ring_create
+		#			owner = FROMFROM
+		#		}		
+		#		spawn_megastructure = { 
+		#			type = mrbx_ring_world_2_intermediate 
+		#			location = event_target:gateway_ring_create
+		#			owner = FROMFROM
+		#		}						
+		#	}
+		#}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = mrbx_u
+					has_country_flag = mrbx_x
+					has_country_flag = mrbx_c
+					has_country_flag = mrbx_r
+				}
+			}
+			owner.capital_scope.solar_system = {
+				random_system_planet = { limit = { has_planet_flag = habitat_planet } save_event_target_as = habitat_planet_create }
+				spawn_megastructure = { 
+					type = mrbx_habitat_25  
+					location = event_target:habitat_planet_create
+					owner = FROMFROM
+				}				
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = mrbx_u
+					has_country_flag = mrbx_x
+				}
+			}
+			owner.capital_scope.solar_system = {
+				spawn_megastructure = { 
+					type = mrbx_ring_world_2_intermediate 
+					owner = FROMFROM
+					location = star
+				}				
+			}
+			every_owned_megastructure  = {
+				limit = { is_megastructure_type = mrbx_ring_world_2 }
+				upgrade_megastructure_to = mrbx_ring_world_3_intermediate 
+				finish_upgrade = yes
+			}
+			random_owned_starbase ={
+				set_starbase_size = starbase_citadel 
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = mrbx_c
+			}
+			owner.capital_scope.solar_system = {
+				spawn_megastructure = { 
+					type = mrbx_ring_world_2_intermediate 
+					owner = FROMFROM
+					location = star
+				}				
+			}
+			random_owned_megastructure  = {
+				limit = { is_megastructure_type = mrbx_ring_world_2 }
+				upgrade_megastructure_to = mrbx_ring_world_3_intermediate 
+				finish_upgrade = yes
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = mrbx_r
+			}
+			owner.capital_scope.solar_system = {
+				spawn_megastructure = {
+					type = "mrbx_ring_world_ruined"
+					orbit_angle = 0
+					orbit_distance = 45
+					location = star
+				}
+				spawn_megastructure = {
+					type = "mrbx_ring_world_ruined"
+					orbit_angle = 90
+					#orbit_angle = 92.5
+					orbit_distance = 45
+					location = star
+				}
+				spawn_megastructure = {
+					type = "mrbx_ring_world_ruined"
+					orbit_angle = 180
+					#orbit_angle = 185
+					orbit_distance = 45
+					location = star
+				}
+				spawn_megastructure = {
+					type = "mrbx_ring_world_ruined"
+					orbit_angle = 270
+					#orbit_angle = 277.5
+					orbit_distance = 45
+					location = star
+				}	
+				mrbx_ruined_debris_effect = yes
+			}
+		}
+		random_planet_within_border ={
+			limit = { is_planet_class = pc_habitat }
+			if={
+				limit = { 
+					FROM = { 
+						OR = { 
+							has_country_flag = mrbx_r 
+							has_country_flag = mrbx_c 
+						} 
+					}
+				}
+				#every_tile = {
+				#	limit = { has_building = no has_pop = no has_blocker = no}
+				#	set_blocker = "tb_ancient_ruins"
+				#}
+				#while = {
+				#	count = 5
+				#	random_tile = {
+				#		limit = { has_building = no has_pop = no has_blocker = yes }
+				#		remove_blocker = yes
+				#	}
+				#}
+				add_mrbx_tileblockers_habitat = yes
+				add_mrbx_tileblockers_habitat = yes
+				else = {
+					setup_mrbx_habitat = yes
+					set_owner = FROM
+					every_tile = {
+						limit = { has_building = yes has_pop = no has_blocker = no}
+						create_pop = { 
+							species = owner_species
+							ethos = random
+						}
+					}	
+				}
+			}
+		}
+		every_planet_within_border ={
+			limit = { is_planet_class = pc_ringworld_habitable }
+			set_planet_flag = mrbx_ringworld_setup
+			if={
+				limit = { 
+					FROM = { OR = { has_country_flag = mrbx_c has_country_flag = mrbx_x } }
+				}
+				if = { 
+					limit = { 
+						has_planet_flag = mrbx_ringworld_setup
+						NOT = { FROM = { has_country_flag = mrbx_capital_ring } } 
+					}
+					FROM = { set_country_flag = mrbx_capital_ring }
+					remove_planet_flag = mrbx_ringworld_setup
+					setup_mrbx_ringworld_fallen_capital = yes
+					set_owner = FROM
+					set_capital = yes
+					set_name = "NAME_Palatial_District"
+				}
+				if = { 
+					limit = { 
+						has_planet_flag = mrbx_ringworld_setup
+						NOT = { FROM = { has_country_flag = mrbx_trade_ring_1 } } 
+					}
+					FROM = { set_country_flag = mrbx_trade_ring_1 }
+					remove_planet_flag = mrbx_ringworld_setup
+					setup_mrbx_ringworld_fallen_energy = yes
+					set_owner = FROM
+					set_name = "NAME_Trade_District"
+				}
+				if = {
+					limit = { 
+						has_planet_flag = mrbx_ringworld_setup
+						NOT = { FROM = { has_country_flag = mrbx_mineral_ring_1 } } 
+					}
+					FROM = { set_country_flag = mrbx_mineral_ring_1 }
+					remove_planet_flag = mrbx_ringworld_setup
+					setup_mrbx_ringworld_fallen_mineral = yes
+					set_owner = FROM
+					set_name = "NAME_Industrial_District"
+				}
+				if = {
+					limit = { 
+						has_planet_flag = mrbx_ringworld_setup
+						NOT = { FROM = { has_country_flag = mrbx_bastion_ring_1 } } 
+					}
+					FROM = { set_country_flag = mrbx_bastion_ring_1 }
+					remove_planet_flag = mrbx_ringworld_setup
+					setup_mrbx_ringworld_fallen_bastion = yes
+					set_owner = FROM
+					set_name = "NAME_Eternal_Bastion"
+				}
+				if = {
+					limit = { 
+						has_planet_flag = mrbx_ringworld_setup
+						NOT = { FROM = { has_country_flag = mrbx_farm_ring_1 } } 
+					}
+					FROM = { set_country_flag = mrbx_farm_ring_1 }
+					remove_planet_flag = mrbx_ringworld_setup
+					setup_mrbx_ringworld_fallen_farm = yes
+					set_owner = FROM
+					set_name = "NAME_Agrarian_District"
+				}
+				if = {
+					limit = { 
+						has_planet_flag = mrbx_ringworld_setup
+						NOT = { FROM = { has_country_flag = mrbx_science_ring_1 } } 
+					}
+					FROM = { set_country_flag = mrbx_science_ring_1 }
+					remove_planet_flag = mrbx_ringworld_setup
+					setup_mrbx_ringworld_fallen_science = yes
+					set_owner = FROM
+					set_name = "NAME_The_Archives"
+				}
+				if = { 
+					limit = { 
+						has_planet_flag = mrbx_ringworld_setup
+						NOT = { FROM = { has_country_flag = mrbx_capital_zoo } } 
+					}
+					FROM = { set_country_flag = mrbx_capital_zoo }
+					remove_planet_flag = mrbx_ringworld_setup
+					setup_mrbx_ringworld_fallen_zoo = yes
+					set_owner = FROM
+					set_name = "NAME_Sanctuary"
+				}
+				if = {
+					limit = { 
+						has_planet_flag = mrbx_ringworld_setup
+						NOT = { FROM = { has_country_flag = mrbx_science_ring_2 } } 
+					}
+					FROM = { set_country_flag = mrbx_science_ring_2 }
+					remove_planet_flag = mrbx_ringworld_setup
+					setup_mrbx_ringworld_fallen_science = yes
+					set_owner = FROM
+					set_name = "NAME_The_Archives"
+				}
+				if = {
+					limit = { 
+						has_planet_flag = mrbx_ringworld_setup
+						NOT = { FROM = { has_country_flag = mrbx_farm_ring_2 } } 
+					}
+					FROM = { set_country_flag = mrbx_farm_ring_2 }
+					remove_planet_flag = mrbx_ringworld_setup
+					setup_mrbx_ringworld_fallen_farm = yes
+					set_owner = FROM
+					set_name = "NAME_Agrarian_District"
+				}
+				if = {
+					limit = { 
+						has_planet_flag = mrbx_ringworld_setup
+						NOT = { FROM = { has_country_flag = mrbx_bastion_ring_2 } } 
+					}
+					FROM = { set_country_flag = mrbx_bastion_ring_2 }
+					remove_planet_flag = mrbx_ringworld_setup
+					setup_mrbx_ringworld_fallen_bastion = yes
+					set_owner = FROM
+					set_name = "NAME_Eternal_Bastion"
+				}
+				if = {
+					limit = { 
+						has_planet_flag = mrbx_ringworld_setup
+						NOT = { FROM = { has_country_flag = mrbx_mineral_ring_2 } } 
+					}
+					FROM = { set_country_flag = mrbx_mineral_ring_2 }
+					remove_planet_flag = mrbx_ringworld_setup
+					setup_mrbx_ringworld_fallen_mineral = yes
+					set_owner = FROM
+					set_name = "NAME_Industrial_District"
+				}
+				if = { 
+					limit = { 
+						has_planet_flag = mrbx_ringworld_setup
+						NOT = { FROM = { has_country_flag = mrbx_trade_ring_2 } } 
+					}
+					FROM = { set_country_flag = mrbx_trade_ring_2 }
+					remove_planet_flag = mrbx_ringworld_setup
+					setup_mrbx_ringworld_fallen_energy = yes
+					set_owner = FROM
+					set_name = "NAME_Trade_District"
+				}
+			}
+			if={
+				limit = { FROM = { has_country_flag = mrbx_c } }
+				setup_mrbx_ringworld = yes
+				set_owner = FROM
+			}
+			every_tile = {
+				limit = { has_building = yes has_pop = no has_blocker = no}
+				create_pop = { 
+					species = owner_species
+					ethos = random
+				}
+			}
+			
+		}
+	}
+}
+
+# Triggers when the game starts
+# Adds Megastructures
+country_event = {
+	id = megaringblack_x_game_start.6
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = mrbx_u
+					has_country_flag = mrbx_x
+					has_country_flag = mrbx_c
+					has_country_flag = mrbx_r
+				}
+			}
+			owner.capital_scope.solar_system = {
+				random_system_planet = { limit = { has_planet_flag = nexus_planet } save_event_target_as = nexus_planet_create }
+				random_system_planet = { limit = { has_planet_flag = sentry_planet } save_event_target_as = sentry_planet_create }
+				random_system_planet = { limit = { has_planet_flag = dyson_planet } save_event_target_as = dyson_planet_create }
+				random_system_planet = { limit = { has_planet_flag = gateway_planet } save_event_target_as = gateway_planet_create }
+			
+				random_system_planet = { limit = { has_planet_flag = mrbx_dyson_star } save_event_target_as = dyson_star_create }
+				
+				every_system_planet  = { 
+					limit = { 
+						OR = {
+							has_planet_flag = mrbx_nexus_star 
+							has_planet_flag = mrbx_sentry_star 
+							has_planet_flag = mrbx_dyson_star 
+							has_planet_flag = mrbx_gateway_star 
+						} 
+					}
+					random_list = {
+						17 = { change_pc = pc_b_star }
+						16 = { change_pc = pc_a_star }
+						16 = { change_pc = pc_f_star }
+						17 = { change_pc = pc_g_star }
+						17 = { change_pc = pc_k_star }
+						17 = { change_pc = pc_m_star }
+					}
+				}
+			}
+			#set_country_flag = encountered_first_gateway
+			#add_seen_bypass_type = gateway
+			if = { 
+				limit = { 
+					OR = {
+						has_country_flag = mrbx_u
+						has_country_flag = mrbx_x 
+					}
+				}
+				owner.capital_scope.solar_system = {
+					spawn_megastructure = { 
+						type = think_tank_4
+						location = event_target:nexus_planet_create
+						owner = FROMFROM
+					}
+					spawn_megastructure = { 
+						type = spy_orb_4
+						location = event_target:sentry_planet_create
+						owner = FROMFROM
+					}
+					spawn_megastructure = { 
+						type = dyson_sphere_5
+						location = event_target:dyson_star_create
+						owner = FROMFROM
+					}
+					spawn_megastructure = { 
+						type = gateway_final 
+						location = event_target:gateway_planet_create
+						owner = FROMFROM
+					}
+				}
+				set_country_flag = encountered_first_gateway
+				set_country_flag = gateway_built
+				add_seen_bypass_type = gateway
+			}
+			if = { 
+				limit = { has_country_flag = mrbx_c }
+				owner.capital_scope.solar_system = {
+					spawn_megastructure = { 
+						type = think_tank_1
+						location = event_target:nexus_planet_create
+						owner = FROMFROM
+					}
+					spawn_megastructure = { 
+						type = spy_orb_2
+						location = event_target:sentry_planet_create
+						owner = FROMFROM
+					}
+					spawn_megastructure = { 
+						type = dyson_sphere_2
+						location = event_target:dyson_star_create
+						owner = FROMFROM
+					}
+					spawn_megastructure = { 
+						type = gateway_0 
+						location = event_target:gateway_planet_create
+						owner = FROMFROM
+					}
+				}
+				set_country_flag = encountered_first_gateway
+				add_seen_bypass_type = gateway
+			}
+			if = { 
+				limit = { has_country_flag = mrbx_r }
+				owner.capital_scope.solar_system = {
+					spawn_megastructure = { 
+						type = think_tank_ruined
+						location = event_target:nexus_planet_create
+						owner = FROMFROM
+					}
+					spawn_megastructure = { 
+						type = spy_orb_ruined
+						location = event_target:sentry_planet_create
+						owner = FROMFROM
+					}
+					spawn_megastructure = { 
+						type = dyson_sphere_ruined
+						location = event_target:dyson_star_create
+						owner = FROMFROM
+					}
+					spawn_megastructure = { 
+						type = gateway_ruined  
+						location = event_target:gateway_planet_create
+						owner = FROMFROM
+					}
+					mrbx_ruined_debris_effect = yes
+				}
+				set_country_flag = encountered_ruined_dyson
+				set_country_flag = encountered_ruined_nexus
+				set_country_flag = encountered_ruined_sentry
+				set_country_flag = encountered_ruined_ring 
+				set_country_flag = encountered_first_gateway
+				add_seen_bypass_type = gateway
+			}
+		}
+	}
+}
+
+
+# Triggers when the game starts
+# Adds Worm Setup and Tileblockers
+country_event = {
+	id = megaringblack_x_game_start.7
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = mrbx_u
+					has_country_flag = mrbx_x
+					#has_country_flag = mrbx_c
+				}
+			}
+			give_mrbx_worm_technologies = yes
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = mrbx_u
+					has_country_flag = mrbx_x
+					has_country_flag = mrbx_c
+					has_country_flag = mrbx_r
+				}
+			}
+			every_owned_planet = {
+				remove_mrbx_tileblockers = yes
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = mrbx_c
+					has_country_flag = mrbx_r
+				}
+			}
+			every_owned_planet = {
+				limit = { has_planet_flag = mrbx_start_world }
+				add_mrbx_tileblockers = yes
+			}
+			every_owned_planet = {
+				limit = { is_planet_class = pc_habitat }
+				#add_mrbx_tileblockers_habitat = yes
+				#add_mrbx_tileblockers_habitat = yes
+			}
+		}
+	}
+}
+
+# Triggers when the game starts
+# Adds guardians
+country_event = {
+	id = megaringblack_x_game_start.8
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = mrbx_u
+					has_country_flag = mrbx_x
+					has_country_flag = mrbx_c
+					has_country_flag = mrbx_r
+				}
+			}
+			owner.capital_scope.solar_system = {
+				create_mrbx_technosphere = yes
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = mrbx_u
+					has_country_flag = mrbx_x
+					#has_country_flag = mrbx_c
+					#has_country_flag = mrbx_r
+				}
+			}
+			owner.capital_scope.solar_system = {
+				#create_mrbx_technosphere = yes
+				create_mrbx_guardians = yes
+				mrbx_wormed_planet_effect = yes
+			}
+			every_planet_within_border ={
+				limit = { 
+					has_planet_flag =  mrbx_worm_world
+					OR = {
+						FROM = { has_country_flag = mrbx_u }
+						FROM = { has_country_flag = mrbx_x }
+						FROM = { has_country_flag = mrbx_c }
+					}
+				}	
+				#set_owner = FROM
+				#every_tile = {
+				#	limit = { has_building = yes has_pop = no has_blocker = no}
+				#	create_pop = { 
+				#		species = owner_species
+				#		ethos = random
+				#	}
+				#}
+			}
+		}
+	}
+}
+
+# Triggers when the game starts
+# Adds enclaves
+country_event = {
+	id = megaringblack_x_game_start.9
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = mrbx_u
+					has_country_flag = mrbx_x
+					has_country_flag = mrbx_c
+					has_country_flag = mrbx_r
+				}
+			}
+			owner.capital_scope.solar_system = {
+				random_list = {
+					50 = { spawn_artist_enclave = yes }
+					50 = { spawn_science_enclave = yes }
+				}
+			}
+		}
+	}
+}
+
+# Triggers when the game starts
+# Setup for Machines
+country_event = {
+	id = megaringblack_x_game_start.10
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				has_authority = auth_machine_intelligence
+				OR = {
+					has_country_flag = mrbx_u
+					has_country_flag = mrbx_x
+					has_country_flag = mrbx_c
+					has_country_flag = mrbx_r
+				}
+			}
+			every_planet_within_border ={
+				limit = { is_planet_class = pc_ringworld_habitable }
+				setup_mrbx_machine_ringworld = yes
+			}
+		}
+	}
+}
+
+
+
+# Triggers when the game starts
+# Gives Infinity Machine Contact
+country_event = {
+	id = megaringblack_x_game_start.11
+	title = guardian.1030.name
+	desc = guardian.1030.desc
+	picture = GFX_evt_technosphere
+	show_sound = event_yellow_alert
+	location = from
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		OR = {
+			has_country_flag = mrbx_u
+			has_country_flag = mrbx_x
+			has_country_flag = mrbx_c
+			has_country_flag = mrbx_r
+		}
+		NOR = {
+			has_country_flag = guardians_technosphere_encountered
+			has_country_flag = worm_events_available
+		}
+	}
+
+	immediate = {
+		owner = {
+			country_event = { id = story.8 days = 15 }
+			set_country_flag = guardians_technosphere_encountered
+			establish_communications_no_message = event_target:guardian_technosphere_country
+		}
+	}
+
+	option = {
+		name = INTERESTING
+		owner = {
+			begin_event_chain = {
+				event_chain = technosphere_chain
+				target = root.owner
+			}
+		}
+		hidden_effect = {
+			owner = {
+				create_point_of_interest = {
+					id = technosphere_chain_poi
+					name = technosphere_chain_title
+					desc = technosphere_chain_desc
+					event_chain = technosphere_chain
+					location = root.solar_system
+				}
+				country_event = { id = guardian.1050 days = 520 random = 200 }
+			}
+		}
+	}
+}
+
+# Triggers when the game starts
+# Gives Enclave Contact
+country_event = {
+	id = megaringblack_x_game_start.12
+	title = "action.10.name"
+	desc = "megaringblack_x_game_start.12.desc"
+	picture = GFX_evt_star_chart
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_country_type = default
+		exists = capital_scope
+		OR = {
+			has_country_flag = mrbx_u
+			has_country_flag = mrbx_x
+			has_country_flag = mrbx_c
+			has_country_flag = mrbx_r
+		}
+	}
+
+	immediate = {
+		capital_scope = { save_event_target_as = pc_home }
+		owner.capital_scope.solar_system = {
+			random_fleet_in_system = {
+				limit = {
+					exists = owner
+					owner = { is_country_type = enclave }
+				}
+				owner = {
+					save_event_target_as = target_enclave
+					country_event = { id = guardian.97 days = 300 random = 50 }
+					enable_special_project = {
+						name = "INVESTIGATE_ENCLAVE"
+						location = event_target:pc_home
+						owner = root.owner
+					}
+					country_event = { id = guardian.960 }
+				}
+			}
+		}
+		set_relation_flag = {
+			flag = ongoing_enclave_investigation
+			who = event_target:target_enclave
+		}
+	}
+	
+	option = {
+		name = "action.10.a"
+		tooltip = {
+			enable_special_project = {
+				name = "INVESTIGATE_ENCLAVE"
+				location = event_target:pc_home
+				owner = ROOT
+			}
+		}
+	}
+}
+
+# Triggers when the game starts
+# Guardian Event Trigger
+event = {
+	id = megaringblack_x_game_start.14
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		any_country = {
+			is_ai = no
+			OR = {
+				has_country_flag = mrbx_u
+				has_country_flag = mrbx_x
+				#has_country_flag = mrbx_c
+				#has_country_flag = mrbx_r
+			}
+			NOT = { has_country_flag = mrbx_decision }
+			has_technology = tech_hyper_drive_3 
+		}
+	}
+	
+	immediate = {
+		random_country = {
+			limit = {
+				OR = {
+					has_country_flag = mrbx_u
+					has_country_flag = mrbx_x
+					#has_country_flag = mrbx_c
+					#has_country_flag = mrbx_r
+				}
+				NOT = { has_country_flag = mrbx_decision }
+			}
+			country_event = { id = megaringblack_x_game_start.13 days=-1 }
+		}
+	}
+}
+
+# Guardian Event
+country_event = {
+	id = megaringblack_x_game_start.13
+	title = megaringblack_x_game_start.13.name
+	desc = megaringblack_x_game_start.13.desc
+	diplomatic = yes
+	force_open = yes
+	
+	picture_event_data = {
+		portrait = shroud1
+		room = worm_room
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		#from = { is_country_type = shroud }
+		is_ai = no
+		OR = {
+			has_country_flag = mrbx_u
+			has_country_flag = mrbx_x
+			#has_country_flag = mrbx_c
+			#has_country_flag = mrbx_r
+		}
+		NOT = { has_country_flag = mrbx_decision }
+	}
+	
+	immediate = {
+		capital_scope = { save_event_target_as = pc_home }
+		set_country_flag = mrbx_decision
+	}
+	
+	option = {
+		name = megaringblack_x_game_start.13.a
+		#custom_tooltip = guardian.661.a.tooltip
+		capital_scope = {
+			enable_special_project = {
+				name = "DRAGON_INCUBATION_PROJECT"
+				location = this
+				owner = root
+			}
+		}
+	}
+	option = {
+		name = megaringblack_x_game_start.13.b
+		create_fleet = {
+			name = "NAME_Dreadnought"
+			effect = {
+				set_owner = root
+				create_ship = {
+					name = random
+					design = "NAME_Type_37" # Psi Jump Dreadnought
+					graphical_culture = "npf_01"
+					upgradable = no
+				}
+				set_location = {
+					target = event_target:pc_home
+					distance = 0
+					angle = random
+				}
+			}
+		}
+	}
+	option = {
+		name = megaringblack_x_game_start.13.c
+		hidden_effect = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = 24
+				min = 1000
+				max = 5000
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = 24
+				min = 1000
+				max = 5000
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = 24
+				min = 1000
+				max = 5000
+			}
+			add_research_option = tech_enigmatic_encoder
+			add_tech_progress = {
+				tech = tech_enigmatic_encoder
+				progress = 0.30
+			}
+			add_research_option = tech_enigmatic_decoder
+			add_tech_progress = {
+				tech = tech_enigmatic_decoder
+				progress = 0.30
+			}
+		}
+	}
+}
+
+# Triggers when the game starts
+# assign custom start flag for custom start message
+country_event = {
+	id = megaringblack_x_game_start.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				any_owned_planet = {
+					OR = {
+						has_planet_flag = megaringblack_x_cap
+						has_planet_flag = megaringblack_c_cap
+					}
+				}
+			}
+			set_country_flag = worm_awaited
+			give_technology = { tech = "tech_mega_engineering" message = no }
+			give_technology = { tech = "tech_akx_worm_1" message = no }
+			give_technology = { tech = "tech_akx_worm_2" message = no }
+			give_technology = { tech = "tech_akx_worm_3" message = no }
+			every_planet_within_border  = { 
+				limit = {		
+					OR = {
+						has_planet_flag = megaringblack_x
+						has_planet_flag = megaringblack_c
+						is_planet_class = pc_habitat
+					}
+				}
+				set_owner = root
+				planet_event = { id = megaringblack_x_game_start.2 }
+			}	
+			every_megastructure = {
+				#limit = { has_megastructure_flag = mrbx_graphical_culture }
+				set_graphical_culture = root
+			}
+			solar_system = {
+				random_system_planet = {
+					limit = { 
+						is_star = yes 
+						NOT = { has_planet_flag = f_dyson_star_mrbx } 
+					}
+					save_event_target_as = local_star
+				}
+				create_fleet = {
+					name = "TIME IS SIGHT GRAVITY IS DESIRE"
+					settings = { spawn_debris = no }
+					effect = {
+						set_owner = root
+						create_ship_design = {
+							design = "NAME_Dimensional_Horror"
+						}
+						create_ship = {
+							design = last_created_design
+							name = "NAME_Worm-in-Waiting"
+						}
+						set_location = {
+							target = event_target:local_star
+							distance = 100
+							angle = random
+						}
+					}
+				}
+				random_system_planet = {
+					limit = { has_planet_flag = living_metal_planet_resource }
+					orbital_deposit_tile = {
+						add_deposit = d_living_metal_deposit  
+					}
+				}
+				random_system_planet = {
+					limit = { has_planet_flag = nexus_planet_resources }
+					orbital_deposit_tile = {
+						add_deposit = d_satramene_deposit    
+						add_deposit = d_lythuric_gas_deposit  
+						add_deposit = d_garanthium_deposit  
+						add_deposit = d_neutronium_deposit 
+					}
+				}
+				random_system_planet = {
+					limit = { has_planet_flag = sentry_planet_resources }
+					orbital_deposit_tile = {
+						add_deposit = d_orillium_deposit     
+						add_deposit = d_teldar_deposit   
+						add_deposit = d_yuranic_deposit  
+						add_deposit = d_zro_deposit 
+					}
+				}
+				random_system_planet = {
+					limit = { has_planet_flag = dyson_planet_resources }
+					orbital_deposit_tile = {
+						add_deposit = d_pitharan_deposit    
+						add_deposit = d_engos_deposit   
+						add_deposit = d_terraforming_fluid_deposit   
+						add_deposit = d_terraforming_gas_deposit  
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_owned_planet = {
+					OR = {
+						has_planet_flag = megaringblack_x_cap
+						has_planet_flag = megaringblack_r_cap
+						has_planet_flag = megaringblack_c_cap
+					}
+				}
+			}
+			solar_system = {
+				random_system_planet = {
+					limit = { 
+						is_star = yes 
+						NOR = { 
+							has_planet_flag = f_dyson_star_mrbx 
+							has_planet_flag = f_dyson_star_mrbr
+							has_planet_flag = f_dyson_star_mrbc
+						} 
+					}
+					orbital_deposit_tile = {
+						add_deposit = d_dark_matter_deposit  
+					}
+				}
+			}
+			set_country_flag = custom_start_screen				
+		}
+	}
+}
+
+# creates pops on the random ring worlds
+# this: capital planet
+# from: founder species
+planet_event = {
+	id = megaringblack_x_game_start.2 
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {	
+		if = { 
+			limit = { 
+				OR = {
+					has_planet_flag = megaringblack_x
+					has_planet_flag = megaringblack_c
+				}
+			}
+			random_tile = {
+				limit = {
+					has_building = building_capital_2
+					has_pop = no
+				}
+				create_pop = {
+					species = owner_main_species 
+					ethos = random
+				}
+			}	
+			while = {
+				count = 8
+				random_tile = {
+					limit = {
+						has_pop = no
+						has_building = yes
+					}
+					create_pop = {
+						species = owner_main_species 
+						ethos = random
+					}
+				}
+			}
+			every_tile = {
+				limit = { has_building = building_mining_network_1 }
+				set_building = "building_ancient_factory"
+				set_deposit = d_mineral_deposit				
+			}				
+
+			every_tile = {
+				limit = { has_building = building_hydroponics_farm_1 }
+				set_building = "building_agri_processing_complex"
+				set_deposit = d_farmland_deposit								
+			}
+			random_tile = {
+				add_deposit = d_betharian_deposit   
+			}
+			random_tile = {
+				add_deposit = d_alien_pets_deposit    
+			}
+		}
+		if = { 
+			limit = { 
+				OR = {
+					has_planet_flag = megaringblack_x
+					has_planet_flag = megaringblack_c
+				}
+			}
+			random_tile = {
+				limit = {
+					has_building = no
+				}
+				set_building = "building_machine_capital_2"
+				set_deposit = d_energy_deposit	
+				create_pop = {
+					species = owner_main_species 
+					ethos = random
+				}
+			}
+			every_tile = {
+				limit = { has_building = building_mining_network_1 }
+				set_building = "building_ancient_factory"
+				set_deposit = d_mineral_deposit				
+			}				
+			every_tile = {
+				limit = { has_building = building_power_plant_1 }
+				set_building = "building_dark_matter_power_plant"
+				set_deposit = d_energy_deposit								
+			}
+		}
+		if = {
+			limit = { 
+				OR = {
+					has_planet_flag = megaringblack_x_cap
+					has_planet_flag = megaringblack_c_cap
+				}
+			}
+			random_tile = {
+				limit = { 
+					has_blocker = no 
+					NOT = { has_building = building_capital_2 } 
+					NOT = { has_building = building_capital_1 } 
+				}
+				set_building = "building_akx_worm_3"
+			}
+			random_tile = {
+				limit = { 
+					has_blocker = no 
+					NOT = { has_building = building_capital_2 } 
+					NOT = { has_building = building_capital_1 } 
+					NOT = { has_building = building_akx_worm_3 }
+				}
+				set_building = "building_akx_worm_2"
+			}
+			random_tile = {
+				limit = { 
+					has_blocker = no 
+					NOT = { has_building = building_capital_2 } 
+					NOT = { has_building = building_capital_1 } 
+					NOT = { has_building = building_akx_worm_3 }
+					NOT = { has_building = building_akx_worm_2 }
+				}
+				set_building = "building_akx_worm_1"
+			}
+		}	
+		if = {
+			limit = { is_planet_class = pc_habitat }
+			every_tile = {
+				set_building = "building_hab_laboratory_module"	
+			}	
+			random_tile = {
+				set_building = "building_hab_capital"	
+				create_pop = {
+					species = owner_main_species 
+					ethos = random
+				}
+			}
+			while = {
+				count = 3
+				random_tile = {
+					limit = {
+						has_pop = no
+						has_building = yes
+					}
+					create_pop = {
+						species = owner_main_species 
+						ethos = random
+					}
+				}
+			}
+		}
+	}
+}

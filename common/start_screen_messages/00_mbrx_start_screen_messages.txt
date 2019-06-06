@@ -1,0 +1,21 @@
+# Start Screen Messages
+# Parameters:
+#   trigger, a trigger with country which decides if this is a valid part. Empty will be treated as always=yes.
+#   localization, a key to a localized string.
+#	location, decides where this chunk of text is located in the description, cannot be negative.
+
+### CBSHING CUSTOM SCRIPTS FOR FALLEN ANCIENTS - THE PRESERVE START
+
+# MBRX
+part = {
+	location = 0
+	localization = "START_SCREEN_MRBX_DEFAULT"
+	
+	trigger = {
+		OR = {
+			has_country_flag = mrbx_x
+			has_country_flag = mrbx_c
+			has_country_flag = mrbx_r
+		}
+	}
+}

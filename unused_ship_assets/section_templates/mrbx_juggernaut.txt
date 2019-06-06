@@ -1,0 +1,1020 @@
+# Automated Dreadnought Section
+ship_section_template = {
+	key = "mrbx_juggernaut_key"
+	#ship_size = mrbx_juggernaut_01
+	ship_size = npc_warship_01
+	fits_on_slot = mid
+	entity = "npc_warship_01_hull_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "TITANIC_01"
+		slot_size = titanic
+		slot_type = weapon
+		locatorname = "titan_gun_01"
+	}
+	component_slot = {
+		name = "TITANIC_02"
+		slot_size = titanic
+		slot_type = weapon
+		locatorname = "titan_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		slot_size = extra_large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_02"
+		slot_size = extra_large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "TORPEDO_01"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_02"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_03"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_04"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_05"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_06"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_07"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_08"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_09"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_10"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_11"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_12"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_13"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_14"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_15"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_16"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_17"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_18"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_19"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_20"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_21"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_22"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_23"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_24"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_25"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_26"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_27"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_28"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_29"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_30"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_31"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_32"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_33"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_34"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_35"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_36"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_37"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_38"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_39"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_40"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_41"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_42"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_43"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_44"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_45"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_46"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_47"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_48"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_49"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_50"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_51"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_52"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_53"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_54"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_55"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_56"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_57"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_58"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_59"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_60"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_61"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_62"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_63"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_64"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "TORPEDO_65"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_66"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_67"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_68"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_69"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_70"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_71"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "TORPEDO_72"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		 
+	}
+	component_slot = {
+		name = "PD_01"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_02"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_03"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_04"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "PD_05"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_06"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_07"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_08"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "PD_09"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_10"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_11"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_12"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "PD_13"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_14"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_15"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "PD_16"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_17"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_18"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "PD_19"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_20"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_21"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "PD_22"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_23"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "PD_24"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}		
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_03"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}		
+	component_slot = {
+		name = "STRIKE_CRAFT_04"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_05"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}		
+	component_slot = {
+		name = "STRIKE_CRAFT_06"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_07"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}		
+	component_slot = {
+		name = "STRIKE_CRAFT_08"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"	
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_09"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}		
+	component_slot = {
+		name = "STRIKE_CRAFT_10"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"	
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_11"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}		
+	component_slot = {
+		name = "STRIKE_CRAFT_12"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_13"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"	
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_14"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}		
+	component_slot = {
+		name = "STRIKE_CRAFT_15"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_16"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_17"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}		
+	component_slot = {
+		name = "STRIKE_CRAFT_18"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_19"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_20"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}		
+	component_slot = {
+		name = "STRIKE_CRAFT_21"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_22"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"	
+	}		
+	component_slot = {
+		name = "STRIKE_CRAFT_23"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_24"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}		
+	component_slot = {
+		name = "STRIKE_CRAFT_25"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_26"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}		
+	component_slot = {
+		name = "STRIKE_CRAFT_27"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_28"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}		
+	component_slot = {
+		name = "STRIKE_CRAFT_29"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"	
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_30"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}		
+	component_slot = {
+		name = "STRIKE_CRAFT_31"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"	
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_32"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_33"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_34"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_35"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_36"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_37"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_38"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_39"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_40"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_41"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_42"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_43"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"	
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_44"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_45"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_46"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_47"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_48"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	
+	large_utility_slots = 72
+	aux_utility_slots = 5
+}

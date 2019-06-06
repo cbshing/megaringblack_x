@@ -1,0 +1,48 @@
+﻿l_polish:
+
+# Solar System Init Mega Ringworld Blackhole X
+ megaringblack_x_NAME:0 "MRBX Ring Finished"
+ megaringblack_x_DESC:0 "Mega Ringworld Blackhole X - Finished:\n\nStart the game inhabitating all 12 ringworlds orbiting a blackhole with a 12 ringworld system with fallen empire buildings, all megastructures completed in the same system. The Infinity Machine , Guardians, & Enclaves also starts in this system.\n\n$system_initializer_DESC$"
+ megaringblack_r_NAME:0 "MRBX Ring Ruins"
+ megaringblack_r_DESC:0 "Mega Ringworld Blackhole X - Ruined:\n\nStart the game inhabitating a planet orbiting a blackhole with a 12 ringworld system with all megastructures ruined in the same system. The Infinity Machine & Enclaves also starts in this system.\n\n$system_initializer_DESC$"
+ megaringblack_c_NAME:0 "MRBX Ring Unfinished"
+ megaringblack_c_DESC:0 "Mega Ringworld Blackhole X - Unfinished:\n\nStart the game inhabitating a ringworld under construction orbiting a blackhole with fallen empire buildings, all megastructures partially completed in the same system. The Infinity Machine & Enclaves also starts in this system.\n\n$system_initializer_DESC$"
+
+ START_SCREEN_MRBX_DEFAULT:0 "One Ring to rule them all, One ring to find them; One ring to bring them all and in the darkness bind them.\n\n-J.R.R. Tolkien"
+  
+ mrbx_habitat_25_MEGASTRUCTURE_DETAILS:1 "An §Y$pc_habitat$§! is a theoretically self-sustaining space station designed for permanent habitation."
+ mrbx_habitat_25_CONSTRUCTION_INFO_DELAYED:2 "A Megahabitat can only house habitat-specific £building  §YBuildings§! and is limited to §Y25§! tiles."
+ mrbx_habitat_25:0 "Megahabitat"
+ mrbx_habitat_25_DESC:0 "A Mega Habitation Station orbiting an uninhabitable planet, capable of housing a large number of §HPops§! and §HBuildings§! away from the surface."
+ 
+ mrbx_ring_world_ruined:0 "Ruined Megaring Section"
+ mrbx_ring_world_ruined_DESC:0 "This section of the Megaring World once supported a functional biosphere, but no longer. Repairs are theoretically feasible, but it would require advanced technology and a large amount of resources."
+ mrbx_ring_world_ruined_MEGASTRUCTURE_DETAILS:0 ""
+ mrbx_ring_world_restored:0 "Completed Megaring World Section"
+ mrbx_ring_world_restored_DESC:0 "A fully functional habitable Megaring World section, complete with an active biosphere, that is ready for settlement."
+ 
+ mrbx_ring_world_1_MEGASTRUCTURE_DETAILS:1 "A §Y$pc_ringworld_habitable$§! allows for multiple planet-like zones, cannibalizing all other planets in the system for materials."
+ mrbx_ring_world_1_CONSTRUCTION_INFO_DELAYED:3 "A full Megaring World consists of 4 Completed Megaring World Sections, each equivalent to a size 25 Gaia world."
+ mrbx_ring_world_1:0 "Megaring World Site"
+ mrbx_ring_world_1_DESC:0 "This complex will serve as a staging ground, resource depot and living quarters for the hundreds of thousands of personnel involved in the Megaring World's construction."
+ mrbx_ring_world_2_intermediate:0 "Megaring World Frame"
+ mrbx_ring_world_2_intermediate_DESC:0 "This initial skeletal frame encircles the system's sun, and serves as the platform on which we will eventually build fully habitable sections."
+ mrbx_ring_world_2:0 "Megaring World Frame Section"
+ mrbx_ring_world_2_DESC:0 "This skeletal frame section makes up roughly one quarter of the unfinished Megaring World's total surface area. Work on the smaller habitable section has not yet been completed."
+ mrbx_ring_world_3_intermediate:0 "Completed Megaring World Section"
+ mrbx_ring_world_3_intermediate_DESC:0 "A fully functional habitable Megaring World section, complete with an active biosphere, that is ready for settlement."
+ 
+ megaringblack_x_game_start.12.desc:0 "We've arrived to the stars, but we are not alone. Knock, knock...who's there?"
+ 
+ megaringblack_x_game_start.13.name:0 "Guardians of the Ring"
+ megaringblack_x_game_start.13.desc:0 "TIME IS SIGHT. GRAVITY IS DESIRE. WHAT DO YOU DESIRE?"
+ megaringblack_x_game_start.13.a:0 "An egg."
+ megaringblack_x_game_start.13.b:0 "An sword."
+ megaringblack_x_game_start.13.c:0 "An shield."
+ 
+ pc_machine_outomaton:0 "False Mechanica"
+ pc_machine_outomaton_desc:0 "An artificial uninhabitable world shaped like a Machine World."
+ pc_gaia_outomaton:0 "False Gaia"
+ pc_gaia_outomaton_desc:0 "An artificial uninhabitable world shaped like a Gaia World."
+ pc_nuked_outomaton:0 "False Tomb"
+ pc_nuked_outomaton_desc:0 "An artificial uninhabitable world shaped like a Tomb World."
